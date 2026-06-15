@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhinav Rastogi — Customer Success Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0d1117;
+  --ink-2:#3c4043;
+  --ink-3:#5f6368;
+  --ink-4:#9aa0a6;
+  --surface:#ffffff;
+  --surface-2:#f8f9fa;
+  --surface-3:#f1f3f4;
+  --border:#e8eaed;
+  --teal:#1d9e75;
+  --teal-dk:#0f6e56;
+  --teal-lt:#e1f5ee;
+  --teal-mid:#5dcaa5;
+  --amber:#f29900;
+  --amber-lt:#fef7e0;
+  --blue:#1a73e8;
+  --blue-lt:#e8f0fe;
+  --navy:#0a1628;
+  --r-sm:8px;
+  --r-md:12px;
+  --r-lg:16px;
+  --r-xl:24px;
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--surface);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* ── NAV ─────────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:64px;background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;
+}
+.nav-logo{font-family:'Google Sans',sans-serif;font-size:17px;font-weight:700;color:var(--ink)}
+.nav-logo span{color:var(--teal)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{
+  font-size:13px;font-weight:500;color:var(--ink-3);
+  padding:8px 12px;border-radius:100px;
+  transition:background .15s,color .15s;
+}
+.nav-links a:hover{background:var(--surface-3);color:var(--ink)}
+.nav-cta{
+  background:var(--teal);color:#fff!important;
+  padding:8px 18px!important;border-radius:100px!important;
+  font-weight:600!important;
+  transition:background .15s,transform .1s!important;
+}
+.nav-cta:hover{background:var(--teal-dk)!important;transform:translateY(-1px)}
+
+/* ── HERO ────────────────────────────────────────────── */
+.hero{
+  min-height:100vh;padding:0 5%;
+  display:flex;align-items:center;
+  background:var(--navy);
+  overflow:hidden;position:relative;
+}
+.hero-bg-banner{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center right;
+  opacity:0.08;
+  filter:saturate(0);
+}
+.hero-grid-overlay{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(93,202,165,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(93,202,165,0.04) 1px,transparent 1px);
+  background-size:48px 48px;
+}
+.hero-glow{
+  position:absolute;top:-20%;right:-10%;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(29,158,117,0.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{
+  position:relative;z-index:1;
+  max-width:1100px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:center;
+  padding:7rem 0 5rem;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(29,158,117,0.12);
+  border:1px solid rgba(93,202,165,0.25);
+  color:var(--teal-mid);padding:7px 16px;border-radius:100px;
+  font-size:12px;font-weight:600;letter-spacing:0.5px;
+  text-transform:uppercase;margin-bottom:1.5rem;
+}
+.hero-eyebrow::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--teal-mid);animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
+.hero h1{
+  font-family:'Google Sans',sans-serif;
+  font-size:clamp(2.4rem,4.5vw,3.6rem);
+  font-weight:700;color:#fff;
+  line-height:1.1;letter-spacing:-0.5px;
+  margin-bottom:1.25rem;
+}
+.hero h1 .hi{color:rgba(255,255,255,0.5);font-weight:300;font-size:0.65em;display:block;margin-bottom:4px}
+.hero h1 em{color:var(--teal-mid);font-style:normal}
+.hero-sub{
+  font-size:1.05rem;color:rgba(255,255,255,0.55);
+  max-width:520px;line-height:1.75;margin-bottom:2.5rem;
+}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:3rem}
+.btn-solid{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--teal);color:#fff;
+  padding:13px 26px;border-radius:100px;
+  font-weight:600;font-size:14px;
+  transition:background .15s,transform .1s;
+}
+.btn-solid:hover{background:var(--teal-dk);transform:translateY(-1px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;color:rgba(255,255,255,0.8);
+  padding:12px 24px;border-radius:100px;
+  border:1px solid rgba(255,255,255,0.18);
+  font-size:14px;font-weight:500;
+  transition:border-color .15s,background .15s;
+}
+.btn-ghost:hover{border-color:var(--teal-mid);background:rgba(29,158,117,0.1)}
+.hero-proof{
+  display:flex;gap:2.5rem;
+  padding-top:2rem;
+  border-top:1px solid rgba(255,255,255,0.07);
+}
+.hero-proof-item .n{
+  font-family:'Google Sans',sans-serif;
+  font-size:2rem;font-weight:700;color:#fff;line-height:1;
+}
+.hero-proof-item .l{font-size:11px;color:rgba(255,255,255,0.4);margin-top:4px;letter-spacing:0.3px}
+
+/* HERO CARD */
+.hero-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:var(--r-xl);padding:1.75rem;
+}
+.hero-avatar{
+  width:72px;height:72px;border-radius:50%;
+  background:linear-gradient(135deg,var(--teal),var(--teal-dk));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Google Sans',sans-serif;font-size:1.6rem;font-weight:700;color:#fff;
+  border:2px solid rgba(93,202,165,0.3);
+  margin-bottom:1.25rem;
+}
+.hero-card-name{font-family:'Google Sans',sans-serif;font-size:1.1rem;font-weight:700;color:#fff}
+.hero-card-role{font-size:12px;color:rgba(255,255,255,0.45);margin-bottom:1.5rem}
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kpi{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:var(--r-md);padding:14px;
+}
+.kpi .v{font-family:'Google Sans',sans-serif;font-size:1.3rem;font-weight:700;color:var(--teal-mid)}
+.kpi .k{font-size:11px;color:rgba(255,255,255,0.4);margin-top:2px}
+
+/* ── BANNER STRIP ──────────────────────────────────── */
+.banner-strip{width:100%;overflow:hidden;line-height:0}
+.banner-strip img{width:100%;object-fit:cover;max-height:200px}
+
+/* ── SHARED SECTION ────────────────────────────────── */
+section{padding:6rem 5%}
+.section-wrap{max-width:1100px;margin:0 auto}
+.section-header{margin-bottom:3rem}
+.label{
+  font-size:11px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--teal);margin-bottom:10px;
+}
+.title{
+  font-family:'Google Sans',sans-serif;
+  font-size:clamp(1.6rem,2.8vw,2.2rem);
+  font-weight:700;letter-spacing:-0.3px;color:var(--ink);
+  margin-bottom:0.6rem;
+}
+.subtitle{font-size:1rem;color:var(--ink-3);max-width:580px;line-height:1.7}
+.divider{height:1px;background:var(--border);margin:0 5%}
+
+/* ── IMPACT ─────────────────────────────────────────── */
+#impact{background:var(--surface-2)}
+.impact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.impact-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  padding:1.75rem;
+  position:relative;overflow:hidden;
+  transition:border-color .2s,transform .2s;
+}
+.impact-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.impact-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--teal);
+}
+.impact-card.amber::after{background:var(--amber)}
+.impact-card.blue::after{background:var(--blue)}
+.impact-num{
+  font-family:'Google Sans',sans-serif;
+  font-size:2.6rem;font-weight:700;color:var(--ink);
+  line-height:1;margin-bottom:8px;
+}
+.impact-num .hi{color:var(--teal)}
+.impact-num .amber{color:var(--amber)}
+.impact-desc{font-size:13px;color:var(--ink-3);line-height:1.5;margin-bottom:14px}
+.chip{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:600;padding:4px 10px;border-radius:100px;
+  background:var(--teal-lt);color:var(--teal-dk);
+}
+.chip.amber{background:var(--amber-lt);color:#7a4f00}
+.chip.blue{background:var(--blue-lt);color:#1557b0}
+
+/* ── CASE STUDY ─────────────────────────────────────── */
+#casestudy{background:var(--surface)}
+.cs-card{
+  background:var(--navy);
+  border-radius:var(--r-xl);
+  overflow:hidden;
+}
+.cs-top{
+  padding:3rem 3rem 2rem;
+  display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;
+}
+.cs-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(239,159,39,0.15);
+  border:1px solid rgba(239,159,39,0.25);
+  color:#fac765;padding:6px 14px;border-radius:100px;
+  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.cs-card h3{
+  font-family:'Google Sans',sans-serif;
+  font-size:1.6rem;font-weight:700;color:#fff;
+  line-height:1.25;margin-bottom:0.75rem;
+}
+.cs-card p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:600px}
+.cs-arrow{
+  font-family:'Google Sans',sans-serif;
+  font-size:4rem;font-weight:700;
+  color:var(--teal-mid);line-height:1;
+  white-space:nowrap;padding-top:0.5rem;
+}
+.cs-metrics{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.cs-metric{
+  padding:1.75rem 2rem;
+  border-right:1px solid rgba(255,255,255,0.06);
+}
+.cs-metric:last-child{border-right:none}
+.cs-metric .v{
+  font-family:'Google Sans',sans-serif;
+  font-size:2rem;font-weight:700;color:var(--teal-mid);
+  line-height:1;
+}
+.cs-metric .l{font-size:12px;color:rgba(255,255,255,0.4);margin-top:6px}
+.cs-story{
+  padding:2rem 3rem;
+  background:rgba(255,255,255,0.02);
+  border-top:1px solid rgba(255,255,255,0.05);
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;
+}
+.cs-step{border-left:2px solid rgba(93,202,165,0.3);padding-left:1rem}
+.cs-step:nth-child(2){border-color:rgba(239,159,39,0.3)}
+.cs-step:nth-child(3){border-color:rgba(26,115,232,0.3)}
+.cs-step .phase{font-size:11px;font-weight:700;color:var(--teal-mid);letter-spacing:1px;text-transform:uppercase}
+.cs-step .phase.amber{color:#fac765}
+.cs-step .phase.blue{color:#8ab4f8}
+.cs-step p{font-size:13px;color:rgba(255,255,255,0.55);margin-top:6px;line-height:1.6}
+
+/* ── AI SECTION ─────────────────────────────────────── */
+#ai{background:var(--surface-2)}
+.ai-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.ai-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  padding:2rem;
+  transition:border-color .2s,transform .2s;
+  position:relative;overflow:hidden;
+}
+.ai-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.ai-card-full{grid-column:1/-1}
+.ai-card-icon{
+  width:48px;height:48px;border-radius:var(--r-sm);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;margin-bottom:1.25rem;
+}
+.ai-card-icon.teal-bg{background:var(--teal-lt)}
+.ai-card-icon.amber-bg{background:var(--amber-lt)}
+.ai-card-icon.blue-bg{background:var(--blue-lt)}
+.ai-card-icon.navy-bg{background:#e8edf5}
+.ai-card h4{
+  font-family:'Google Sans',sans-serif;
+  font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem;
+}
+.ai-card .tool-credit{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:600;padding:3px 9px;border-radius:100px;
+  background:var(--surface-3);color:var(--ink-3);margin-bottom:0.75rem;
+}
+.ai-card p{font-size:13px;color:var(--ink-3);line-height:1.65}
+.ai-card .impact-tag{
+  display:inline-flex;margin-top:1rem;
+  background:var(--teal-lt);color:var(--teal-dk);
+  font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px;
+}
+.ai-card .impact-tag.amber{background:var(--amber-lt);color:#7a4f00}
+.ai-card .impact-tag.blue{background:var(--blue-lt);color:#1557b0}
+
+/* ── EXPERTISE ──────────────────────────────────────── */
+#expertise{background:var(--surface)}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.exp-card{
+  padding:1.5rem;border-radius:var(--r-md);
+  border:1px solid var(--border);
+  transition:border-color .2s;
+}
+.exp-card:hover{border-color:var(--teal)}
+.exp-card .icon{font-size:1.5rem;margin-bottom:0.75rem}
+.exp-card h4{font-family:'Google Sans',sans-serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:0.4rem}
+.exp-card p{font-size:13px;color:var(--ink-3);line-height:1.6}
+
+/* ── TIMELINE ──────────────────────────────────────── */
+#experience{background:var(--surface-2)}
+.tl{position:relative;padding-left:28px}
+.tl::before{content:'';position:absolute;left:6px;top:4px;bottom:4px;width:1px;background:var(--border)}
+.tl-item{padding-bottom:2.5rem;position:relative}
+.tl-item::before{
+  content:'';position:absolute;left:-28px;top:5px;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--surface);border:2px solid var(--border);
+}
+.tl-item:first-child::before{background:var(--teal);border-color:var(--teal)}
+.tl-date{font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.tl-role{font-family:'Google Sans',sans-serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:2px}
+.tl-co{font-size:13px;color:var(--ink-3);margin-bottom:0.75rem}
+.tl-bullets{list-style:none}
+.tl-bullets li{
+  font-size:13px;color:var(--ink-3);padding-left:16px;
+  position:relative;margin-bottom:5px;line-height:1.6;
+}
+.tl-bullets li::before{content:'›';position:absolute;left:0;color:var(--teal);font-weight:700}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tag{
+  font-size:11px;font-weight:500;padding:3px 10px;border-radius:100px;
+  background:var(--teal-lt);color:var(--teal-dk);
+}
+.tag.amb{background:var(--amber-lt);color:#7a4f00}
+
+/* ── PLAYBOOK ──────────────────────────────────────── */
+#playbook{background:var(--navy)}
+#playbook .label{color:var(--teal-mid)}
+#playbook .title{color:#fff}
+#playbook .subtitle{color:rgba(255,255,255,0.45)}
+.pb-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:var(--r-lg);overflow:hidden;margin-top:2.5rem;
+}
+.pb-col{
+  background:rgba(255,255,255,0.02);
+  padding:1.75rem;transition:background .2s;
+}
+.pb-col:hover{background:rgba(255,255,255,0.05)}
+.pb-n{font-size:11px;font-weight:700;color:rgba(255,255,255,0.2);letter-spacing:2px}
+.pb-phase{
+  font-family:'Google Sans',sans-serif;
+  font-size:1.1rem;font-weight:700;color:#fff;
+  margin:8px 0 1.25rem;
+}
+.pb-phase.teal{color:var(--teal-mid)}
+.pb-phase.amb{color:var(--amber)}
+.pb-col ul{list-style:none}
+.pb-col ul li{font-size:12px;color:rgba(255,255,255,0.45);padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+
+/* ── NEWSLETTER ─────────────────────────────────────── */
+#newsletter{background:var(--surface)}
+.nl-card{
+  background:var(--surface-2);
+  border:1px solid var(--border);
+  border-radius:var(--r-xl);
+  padding:3rem;
+  display:grid;grid-template-columns:1fr 200px;gap:3rem;align-items:center;
+}
+.nl-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--amber-lt);color:#7a4f00;
+  padding:5px 14px;border-radius:100px;
+  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.nl-card h3{font-family:'Google Sans',sans-serif;font-size:1.5rem;font-weight:700;color:var(--ink);margin-bottom:0.6rem}
+.nl-card p{font-size:14px;color:var(--ink-3);line-height:1.7;margin-bottom:1.5rem}
+.nl-stat{text-align:center;padding:2rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg)}
+.nl-stat .big{font-family:'Google Sans',sans-serif;font-size:3.5rem;font-weight:700;color:var(--teal);line-height:1}
+.nl-stat .lbl{font-size:12px;color:var(--ink-4);margin-top:6px}
+
+/* ── TOOLS ───────────────────────────────────────────── */
+#tools{background:var(--surface-2)}
+.tools-flex{display:flex;flex-wrap:wrap;gap:10px;margin-top:1.75rem}
+.tool{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:8px 16px;border-radius:100px;
+  border:1px solid var(--border);background:var(--surface);
+  font-size:13px;font-weight:500;color:var(--ink-3);
+  transition:border-color .15s,color .15s;
+}
+.tool:hover{border-color:var(--teal);color:var(--teal)}
+.tool.hl{background:var(--teal-lt);border-color:transparent;color:var(--teal-dk)}
+
+/* ── AWARDS ──────────────────────────────────────────── */
+#creds{background:var(--surface)}
+.awards{display:flex;flex-wrap:wrap;gap:10px;margin-top:1.5rem}
+.award{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--amber-lt);color:#7a4f00;
+  border:1px solid #f6d580;
+  border-radius:var(--r-sm);padding:10px 16px;
+  font-size:13px;font-weight:500;
+}
+.award::before{content:'★';color:var(--amber)}
+.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:1.5rem}
+.cert{
+  background:var(--surface-2);border:1px solid var(--border);
+  border-radius:var(--r-sm);padding:1rem 1.25rem;
+  display:flex;align-items:center;gap:12px;
+}
+.cert-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);flex-shrink:0}
+.cert-name{font-size:13px;font-weight:600;color:var(--ink);line-height:1.3}
+.cert-by{font-size:11px;color:var(--ink-4);margin-top:2px}
+
+/* ── CONTACT ─────────────────────────────────────────── */
+#contact{
+  background:var(--navy);
+  text-align:center;
+  padding:6rem 5%;
+}
+#contact .title{color:#fff}
+#contact .subtitle{color:rgba(255,255,255,0.45);margin:0 auto 2.5rem}
+.contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+footer{
+  background:#050d1a;padding:1.25rem 5%;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;color:rgba(255,255,255,0.2);
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────── */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-card{display:none}
+  .impact-grid{grid-template-columns:1fr 1fr}
+  .ai-grid{grid-template-columns:1fr}
+  .exp-grid{grid-template-columns:1fr 1fr}
+  .cs-metrics{grid-template-columns:1fr 1fr}
+  .cs-story{grid-template-columns:1fr}
+  .pb-grid{grid-template-columns:1fr 1fr}
+  .nl-card{grid-template-columns:1fr}
+  .certs-grid{grid-template-columns:1fr 1fr}
+  nav .nav-links{display:none}
+}
+@media(max-width:600px){
+  .impact-grid,.exp-grid,.certs-grid{grid-template-columns:1fr}
+  .cs-top{grid-template-columns:1fr}
+  .cs-arrow{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Abhinav <span>Rastogi</span></div>
+  <div class="nav-links">
+    <a href="#impact">Impact</a>
+    <a href="#casestudy">Case study</a>
+    <a href="#ai">AI work</a>
+    <a href="#experience">Career</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="https://www.linkedin.com/in/abhinavrasttogi/" target="_blank" rel="noopener" class="nav-cta">Connect ↗</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg-banner" id="heroBanner"></div>
+  <div class="hero-grid-overlay"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Associate Director · Customer Success · B2B SaaS</div>
+      <h1>
+        <span class="hi">Abhinav Rastogi</span>
+        Building enterprise relationships that <em>last</em> and revenue that <em>compounds.</em>
+      </h1>
+      <p class="hero-sub">I help B2B SaaS companies turn their hardest enterprise accounts into their most loyal ones — through data, structure, and genuine partnership. $15.8M ARR across APAC, EMEA and North America.</p>
+      <div class="hero-actions">
+        <a href="https://www.linkedin.com/in/abhinavrasttogi/" target="_blank" rel="noopener" class="btn-solid">View LinkedIn profile ↗</a>
+        <a href="mailto:abhinavrasttogi@gmail.com" class="btn-ghost">Get in touch</a>
+        <a href="https://www.linkedin.com/newsletters/7064079943898476544/" target="_blank" rel="noopener" class="btn-ghost">Read newsletter ↗</a>
+      </div>
+      <div class="hero-proof">
+        <div class="hero-proof-item"><div class="n">$15.8M</div><div class="l">ARR managed</div></div>
+        <div class="hero-proof-item"><div class="n">35+</div><div class="l">Enterprise accounts</div></div>
+        <div class="hero-proof-item"><div class="n">92%+</div><div class="l">Renewal rate</div></div>
+        <div class="hero-proof-item"><div class="n">3</div><div class="l">Global regions</div></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="photo.jpg" alt="Abhinav Rastogi" style="width:80px;height:80px;border-radius:50%;object-fit:cover;object-position:top;border:3px solid rgba(93,202,165,0.4);margin-bottom:1.25rem;display:block">
+      <div class="hero-card-name">Abhinav Rastogi</div>
+      <div class="hero-card-role">Associate Director – CS &amp; Strategy · Disprz</div>
+      <div class="kpi-grid">
+        <div class="kpi"><div class="v">13→9%</div><div class="k">Churn reduced</div></div>
+        <div class="kpi"><div class="v">92%+</div><div class="k">Renewals sustained</div></div>
+        <div class="kpi"><div class="v">$119K+</div><div class="k">Expansion ARR</div></div>
+        <div class="kpi"><div class="v">2K+</div><div class="k">Newsletter readers</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER STRIP -->
+<div class="banner-strip" style="position:relative">
+  <img id="bannerImg" alt="Steering enterprise customers from first login to lasting loyalty">
+  <div style="position:absolute;top:50%;left:5%;transform:translateY(-50%);z-index:2">
+    <p style="font-family:'Google Sans',sans-serif;font-size:clamp(1.1rem,2.5vw,1.8rem);font-weight:700;color:#f29900;text-shadow:0 2px 8px rgba(0,0,0,0.5);line-height:1.25">Steering enterprise customers<br>from first login to lasting loyalty</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="label">Quantified outcomes</div>
+      <h2 class="title">Work that moved the needle</h2>
+      <p class="subtitle">These aren't resume metrics. Each number represents a deliberate decision, a hard conversation, or a program built from scratch.</p>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-card">
+        <div class="impact-num"><span class="hi">31%</span> churn drop</div>
+        <div class="impact-desc">Reduced global churn from 13% to 9% over 18 months by building predictive health frameworks and structured risk governance across all strategic accounts.</div>
+        <div class="chip">↓ 4 percentage points</div>
+      </div>
+      <div class="impact-card amber">
+        <div class="impact-num"><span class="amber">92%</span>+ renewals</div>
+        <div class="impact-desc">Sustained enterprise renewal performance through outcome-driven EBRs, executive stakeholder mapping, and value realization that tied platform usage to business results.</div>
+        <div class="chip amber">Sustained across FY24–25</div>
+      </div>
+      <div class="impact-card blue">
+        <div class="impact-num"><span style="color:var(--blue)">$2.5M</span> impact</div>
+        <div class="impact-desc">Led GenAI rollout for Amazon Europe across multiple countries — multilingual AI onboarding contributing to $2.5M projected operational impact.</div>
+        <div class="chip blue">GTM execution</div>
+      </div>
+      <div class="impact-card">
+        <div class="impact-num"><span class="hi">$119K+</span> expansion</div>
+        <div class="impact-desc">Drove net new expansion ARR through install-base growth identification and cross-functional collaboration with Sales and Revenue Operations.</div>
+        <div class="chip">↑ Net new ARR</div>
+      </div>
+      <div class="impact-card amber">
+        <div class="impact-num"><span class="amber">$250K</span> saved</div>
+        <div class="impact-desc">Built a Digital Customer Academy with 150+ monthly active learners — reducing onboarding and support overhead by ~$250K annually while improving adoption 15%+.</div>
+        <div class="chip amber">Annual cost reduction</div>
+      </div>
+      <div class="impact-card blue">
+        <div class="impact-num"><span style="color:var(--blue)">$5M→$15M</span></div>
+        <div class="impact-desc">Part of the leadership team that scaled the CS operation from $5M to $15M ARR — building the operating models, governance cadences, and team structure that made it possible.</div>
+        <div class="chip blue">3× business growth</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CASE STUDY -->
+<section id="casestudy">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="label">Featured case study</div>
+      <h2 class="title">From churn risk to anchor account</h2>
+      <p class="subtitle">How one of APAC's largest e-commerce enterprises nearly left — and became a 3× growth story instead.</p>
+    </div>
+    <div class="cs-card">
+      <div class="cs-top">
+        <div>
+          <div class="cs-badge">🛒 E-commerce · Enterprise · APAC</div>
+          <h3>A potential churn event turned into a $3M, 3× ARR expansion</h3>
+          <p>One of the region's largest e-commerce players was disengaged, underutilizing the platform, and silently moving toward non-renewal. Through executive re-engagement, a rebuilt success plan, and measurable value alignment, the account was not just saved — it was transformed into one of the portfolio's highest-value relationships.</p>
+        </div>
+        <div class="cs-arrow">3×</div>
+      </div>
+      <div class="cs-metrics">
+        <div class="cs-metric"><div class="v">At-risk</div><div class="l">Starting account status</div></div>
+        <div class="cs-metric"><div class="v">$3M</div><div class="l">Account ARR achieved</div></div>
+        <div class="cs-metric"><div class="v">3×</div><div class="l">ARR expansion multiplier</div></div>
+        <div class="cs-metric"><div class="v">Anchor</div><div class="l">Final account designation</div></div>
+      </div>
+      <div class="cs-story">
+        <div class="cs-step">
+          <div class="phase">Diagnose</div>
+          <p>Mapped the real churn drivers: low exec sponsorship, unclear ROI narrative, and product adoption gaps across business units. Built a risk brief that got internal alignment fast.</p>
+        </div>
+        <div class="cs-step">
+          <div class="phase amber">Re-engage</div>
+          <p>Restarted at C-level with a reframed success story. Shifted conversations from feature usage to measurable operational outcomes tied to their growth metrics.</p>
+        </div>
+        <div class="cs-step">
+          <div class="phase blue">Expand</div>
+          <p>Once trust was rebuilt, structured expansion proposals across new business units. Renewal became a platform for growth — not just a contract signature.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AI WORK -->
+<section id="ai">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="label">AI & automation</div>
+      <h2 class="title">Customer Success, powered by AI</h2>
+      <p class="subtitle">I don't just use AI tools — I build operational systems with them. Here's what I've shipped.</p>
+    </div>
+    <div class="ai-grid">
+      <div class="ai-card">
+        <div class="ai-card-icon teal-bg">📊</div>
+        <div class="tool-credit">Claude MCP + HubSpot</div>
+        <h4>Churn Recovery Dashboard</h4>
+        <p>Automated a real-time churn recovery dashboard that surfaces at-risk accounts, flags health score degradation, and generates intervention prompts for CSMs — reducing manual review time and accelerating response speed on high-risk accounts.</p>
+        <div class="impact-tag">Automated risk response</div>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-icon teal-bg">🧠</div>
+        <div class="tool-credit">Predictive Analytics + Gainsight</div>
+        <h4>Predictive Health Score Monitor</h4>
+        <p>Built an automated health score monitoring pipeline that pulls signals from product usage, support tickets, and engagement cadence — then feeds a predictive model to forecast renewal likelihood 90 days out, giving the CS team lead time to act.</p>
+        <div class="impact-tag">90-day renewal forecast</div>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-icon amber-bg">🎙️</div>
+        <div class="tool-credit">ElevenLabs AI Voice</div>
+        <h4>Multilingual AI Voice Avatars for Enablement</h4>
+        <p>Deployed AI voice avatars in Italian, French, and German for enterprise onboarding and product education at Amazon Europe and other EMEA accounts. Native-language enablement drove significantly higher adoption in non-English-speaking markets — content that would have taken weeks to produce now ships in hours.</p>
+        <div class="impact-tag amber">Italian · French · German</div>
+      </div>
+      <div class="ai-card">
+        <div class="ai-card-icon navy-bg">🤖</div>
+        <div class="tool-credit">Claude MCPs + N8N</div>
+        <h4>Chief of Staff Analytics Board</h4>
+        <p>Built a custom CS operations intelligence board using Claude's MCP integrations — aggregating data from Jira, HubSpot, and CRM sources into a single executive view. Tracks renewal pipeline, adoption health, escalation flags, and team performance — the kind of visibility that used to take a full analytics request to ops.</p>
+        <div class="impact-tag">Real-time CS ops visibility</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="label">Core expertise</div>
+      <h2 class="title">What I'm built for</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card"><div class="icon">💰</div><h4>Revenue retention & NRR</h4><p>Churn modeling, renewal forecasting, GRR/NRR ownership, and expansion identification across complex enterprise portfolios.</p></div>
+      <div class="exp-card"><div class="icon">🏢</div><h4>Executive stakeholder management</h4><p>Multi-threaded C-suite relationships, EBRs/QBRs, executive escalation management, and long-cycle renewal negotiations.</p></div>
+      <div class="exp-card"><div class="icon">🤖</div><h4>AI-led enablement & GTM</h4><p>GenAI product rollouts, AI voice content, automated workflows, and data-driven CS operations using modern tooling.</p></div>
+      <div class="exp-card"><div class="icon">📐</div><h4>CS operating model design</h4><p>Built from scratch: health scoring, risk governance, VoC programs, digital academy, and team performance frameworks.</p></div>
+      <div class="exp-card"><div class="icon">👥</div><h4>CS team leadership</h4><p>Led teams of 6–15 CSMs across enterprise and SMB segments, driving execution consistency and strategic account management.</p></div>
+      <div class="exp-card"><div class="icon">🌏</div><h4>Global account strategy</h4><p>Experience managing enterprise portfolios across APAC, EMEA and North America — navigating cultural, time-zone, and regional complexity.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="label">Career</div>
+      <h2 class="title">Where I've worked</h2>
+    </div>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-date">Jul 2021 – Present</div>
+        <div class="tl-role">Associate Director – Customer Success &amp; Strategy</div>
+        <div class="tl-co">Disprz · B2B SaaS · AI-powered enterprise learning</div>
+        <ul class="tl-bullets">
+          <li>Own $15.8M ARR portfolio, 35+ enterprise accounts across APAC, EMEA, North America</li>
+          <li>Reduced churn from 13% to 9% over 18 months; sustained 92%+ renewal performance</li>
+          <li>Led Amazon Europe multilingual AI onboarding — $2.5M projected operational impact</li>
+          <li>Built Digital Customer Academy: 150+ monthly active learners, $250K overhead reduction</li>
+          <li>Leading a team of 6 CSMs across enterprise segment</li>
+        </ul>
+        <div class="tags"><span class="tag">Enterprise CS</span><span class="tag">GenAI</span><span class="tag">Team Lead</span><span class="tag">Gainsight</span><span class="tag">HubSpot</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Nov 2018 – Jun 2021</div>
+        <div class="tl-role">Senior Customer Success Manager</div>
+        <div class="tl-co">IndiaMart Intermesh Ltd · B2B Marketplace</div>
+        <ul class="tl-bullets">
+          <li>Managed Panasonic, Mahindra, JCB and other enterprise accounts</li>
+          <li>Led 15-member CS team across 200+ SMB accounts — 90%+ retention</li>
+          <li>Delivered 20% YoY revenue growth through consultative EBRs</li>
+        </ul>
+        <div class="tags"><span class="tag amb">Team Lead</span><span class="tag amb">Enterprise + SMB</span><span class="tag amb">Revenue Growth</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">May 2015 – Jun 2018</div>
+        <div class="tl-role">Customer Success Consultant / CSM</div>
+        <div class="tl-co">CL Educate Ltd (Career Launcher) · Markk Inc</div>
+        <ul class="tl-bullets">
+          <li>Onboarded and managed 25+ franchise institutional partners at Career Launcher</li>
+          <li>Closed 150+ SaaS contracts at Markk Inc — ~20% of company revenue</li>
+          <li>Led multi-city GTM campaigns driving 10,000+ app downloads</li>
+        </ul>
+        <div class="tags"><span class="tag">Onboarding</span><span class="tag">GTM</span><span class="tag">Early-stage SaaS</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PLAYBOOK -->
+<section id="playbook">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="label">How I operate</div>
+      <h2 class="title">The lifecycle framework</h2>
+      <p class="subtitle">Every account I manage runs through the same four-phase model — adapted to each customer's maturity and goals.</p>
+    </div>
+    <div class="pb-grid">
+      <div class="pb-col">
+        <div class="pb-n">01</div>
+        <div class="pb-phase">Onboard</div>
+        <ul><li>Implementation plan</li><li>Time-to-value mapping</li><li>Go-live playbook</li><li>Stakeholder alignment</li><li>Success criteria</li></ul>
+      </div>
+      <div class="pb-col">
+        <div class="pb-n">02</div>
+        <div class="pb-phase teal">Adopt</div>
+        <ul><li>Digital Academy</li><li>Adoption playbook</li><li>Enablement programs</li><li>Health score tracking</li><li>Usage analytics</li></ul>
+      </div>
+      <div class="pb-col">
+        <div class="pb-n">03</div>
+        <div class="pb-phase teal">Retain</div>
+        <ul><li>EBRs &amp; QBRs</li><li>Value realization</li><li>Health scoring</li><li>Churn prevention</li><li>Risk governance</li></ul>
+      </div>
+      <div class="pb-col">
+        <div class="pb-n">04</div>
+        <div class="pb-phase amb">Expand</div>
+        <ul><li>Renewal playbook</li><li>VoC · CAB · PAC</li><li>NPS programs</li><li>Cross-sell motions</li><li>Advocacy building</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="background:rgba(255,255,255,0.05)"></div>
+
+<!-- NEWSLETTER -->
+<section id="newsletter" style="background:var(--surface)">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="label">Thought leadership</div>
+      <h2 class="title">Writing about CS that matters</h2>
+    </div>
+    <div class="nl-card">
+      <div>
+        <div class="nl-badge">✍ LinkedIn Newsletter</div>
+        <h3>Customer Success &amp; SaaS Growth Strategies</h3>
+        <p>Weekly perspectives on enterprise CS, churn prevention, AI in SaaS, and what it actually takes to retain and grow $10M+ ARR portfolios. Written from the trenches, not from a slide deck.</p>
+        <a href="https://www.linkedin.com/newsletters/7064079943898476544/" target="_blank" rel="noopener" class="btn-solid" style="width:fit-content">Subscribe on LinkedIn ↗</a>
+      </div>
+      <div class="nl-stat">
+        <div class="big">2K+</div>
+        <div class="lbl">Subscribers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TOOLS -->
+<section id="tools" style="background:var(--surface-2)">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="label">Stack</div>
+      <h2 class="title">Tools I work with</h2>
+    </div>
+    <div class="tools-flex">
+      <span class="tool hl">Gainsight</span>
+      <span class="tool hl">HubSpot</span>
+      <span class="tool hl">Salesforce</span>
+      <span class="tool hl">ChurnZero</span>
+      <span class="tool">Claude MCP</span>
+      <span class="tool">N8N</span>
+      <span class="tool">ElevenLabs</span>
+      <span class="tool">Jira</span>
+      <span class="tool">Confluence</span>
+      <span class="tool">Looker</span>
+      <span class="tool">Disprz LMS</span>
+      <span class="tool">Google Workspace</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CREDS -->
+<section id="creds" style="background:var(--surface)">
+  <div class="section-wrap">
+    <div class="section-header">
+      <div class="label">Credentials</div>
+      <h2 class="title">Certifications &amp; recognition</h2>
+    </div>
+    <div class="certs-grid">
+      <div class="cert"><div class="cert-dot"></div><div><div class="cert-name">CSM – Success Coaching Level 4</div><div class="cert-by">SuccessHACKER</div></div></div>
+      <div class="cert"><div class="cert-dot"></div><div><div class="cert-name">GenAI for Business Strategy</div><div class="cert-by">DeepLearning.AI</div></div></div>
+      <div class="cert"><div class="cert-dot"></div><div><div class="cert-name">Building AI Agents</div><div class="cert-by">N8N</div></div></div>
+      <div class="cert"><div class="cert-dot"></div><div><div class="cert-name">Agile Project Management</div><div class="cert-by">Atlassian University</div></div></div>
+      <div class="cert"><div class="cert-dot"></div><div><div class="cert-name">Customer Success &amp; Key Account Mgmt</div><div class="cert-by">LinkedIn Learning</div></div></div>
+      <div class="cert"><div class="cert-dot"></div><div><div class="cert-name">MBA – Marketing &amp; HR</div><div class="cert-by">IMT Nagpur</div></div></div>
+    </div>
+    <div class="awards">
+      <div class="award">CS Leader – Enterprise Category, Disprz FY2024–25</div>
+      <div class="award">Employee Spotlight Award, Disprz FY2023–24</div>
+      <div class="award">Best Team Leader – CS, IndiaMart FY2020–21</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-wrap">
+    <h2 class="title">Open to the right opportunity</h2>
+    <p class="subtitle">I'm looking for senior Customer Success, VP CS, or Revenue Leadership roles in B2B SaaS. If you're building something ambitious and need someone who can protect revenue while growing it — let's talk.</p>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/abhinavrasttogi/" target="_blank" rel="noopener" class="btn-solid">LinkedIn profile ↗</a>
+      <a href="mailto:abhinavrasttogi@gmail.com" class="btn-ghost">abhinavrasttogi@gmail.com</a>
+      <a href="https://www.linkedin.com/newsletters/7064079943898476544/" target="_blank" rel="noopener" class="btn-ghost">Newsletter ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Abhinav Rastogi · Customer Success Leader</span>
+  <span>abhinavrasttogi@gmail.com · +91-9536456561</span>
+</footer>
+
+<script>
+  document.getElementById('heroBanner').style.backgroundImage = "url('banner.jpg')";
+  document.getElementById('bannerImg').src = 'banner.jpg';
+</script>
+</body>
+</html>
